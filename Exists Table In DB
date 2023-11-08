@@ -1,0 +1,15 @@
+وجود داشتن یک جدول در دیتا بیس
+-----------------------------------------------------------------
+IF  OBJECT_ID('TABLE NAME', 'U') IS NOT NULL
+  PRINT 'جدول وجود دارد.'
+ELSE
+    PRINT 'جدول وجود ندارد.'
+-----------------------------------------------------------------
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'TABLE NAME') AND type in (N'U'))
+  BEGIN
+
+  END
+
+
+
+
